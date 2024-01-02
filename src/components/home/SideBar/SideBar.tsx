@@ -17,7 +17,7 @@ const Sidebar = () => {
             height={100}
             priority={true}
             placeholder="blur"
-            style={{ borderRadius: "100%", width: 100, overflow: "hidden" }}
+            style={{ borderRadius: "100%",borderColor:'white', borderWidth:'2px', width: 100, overflow: "hidden" }}
             alt="Picture of the author"
           />
           <div className="mt-4 flex flex-col gap-2">
