@@ -16,6 +16,7 @@ const config: Config = {
       colors: {
         lightBlack: "#333333",
         customBlack: "#212121",
+        secondary:'#0065ff'
       },
     },
   },
