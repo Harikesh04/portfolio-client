@@ -11,9 +11,9 @@ interface ButtonProps {
 }
 
 const buttonStyles: Record<ButtonType, string> = {
-  default: "bg-secondary hover:bg-customBlack text-white",
+  default: "bg-secondary border border-secondary hover:border-white hover:bg-customBlack text-white",
   secondary: "text-white border border-white hover:bg-white hover:text-lightBlack",
-  primary:"text-white  bg-lightBlack hover:bg-secondary hover:text-white",
+  primary:"text-white    bg-lightBlack hover:bg-secondary hover:text-white",
 };
 
 const Button: React.FC<ButtonProps> = ({

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Profile from "../../../../public/assets/profile.jpg";
@@ -6,7 +8,21 @@ import {
   social_media_data,
 } from "@/constant/sidebar_static_data";
 
-const Sidebar = () => {
+interface SidebarProps {
+  activeSection: string | null;
+}
+
+const Sidebar = ({activeSection}:SidebarProps) => {
+
+
+
+  const handleScroll = (id: string) => {
+    const anchor = document.querySelector(`#${id}`);
+
+    anchor && anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+
   return (
     <div className="py-10 w-[35vw] flex items-end">
       <div className="bg-lightBlack flex flex-col p-7 h-full rounded-3xl w-[20vw] ml-auto">
@@ -17,7 +33,13 @@ const Sidebar = () => {
             height={100}
             priority={true}
             placeholder="blur"
-            style={{ borderRadius: "100%",borderColor:'white', borderWidth:'2px', width: 100, overflow: "hidden" }}
+            style={{
+              borderRadius: "100%",
+              borderColor: "white",
+              borderWidth: "2px",
+              width: 100,
+              overflow: "hidden",
+            }}
             alt="Picture of the author"
           />
           <div className="mt-4 flex flex-col gap-2">
@@ -34,11 +56,18 @@ const Sidebar = () => {
         <div className="mt-10">
           {sidebar_data.map((item, index) => (
             <div
-              className="flex items-center gap-5 text-white py-2"
+              className={`flex items-center gap-5 ${activeSection === item.to ?'text-secondary':'text-white'}  py-2`}
               key={index}
             >
               <item.icon />
-              <span>{item.title}</span>
+
+              <span
+                className="cursor-pointer"
+                onClick={() => handleScroll(item.to)}
+                
+              >
+                {item.title}
+              </span>
             </div>
           ))}
         </div>
