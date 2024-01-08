@@ -8,11 +8,8 @@ import {
   social_media_data,
 } from "@/constant/sidebar_static_data";
 
-interface SidebarProps {
-  activeSection: string | null;
-}
 
-const Sidebar = ({activeSection}:SidebarProps) => {
+const Sidebar = () => {
 
 
 
@@ -56,7 +53,7 @@ const Sidebar = ({activeSection}:SidebarProps) => {
         <div className="mt-10">
           {sidebar_data.map((item, index) => (
             <div
-              className={`flex items-center gap-5 ${activeSection === item.to ?'text-secondary':'text-white'}  py-2`}
+              className={`flex items-center gap-5 ${false ?'text-secondary':'text-white'}  py-2`}
               key={index}
             >
               <item.icon />

@@ -1,5 +1,3 @@
-'use client'
-
 import { home_data } from "@/constant/content_static_data";
 import SectionCardWrapper from "../SectionCardWrapper";
 import Button from "@/components/ui/Button";

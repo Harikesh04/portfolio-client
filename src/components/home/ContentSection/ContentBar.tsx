@@ -1,18 +1,23 @@
-import React, { MutableRefObject } from "react";
+import React from "react";
+import HomeSection from "./Home/HomeSection";
+import About from "./About/About";
+import Projects from "./Projects/Projects";
+import Experience from "./Experience/Experience";
+import Skills from "./Skills/Skills";
+import Contact from "./Contact/Contact";
 
-interface ContentBarProps {
-  refElement: {
-    id: string;
-    innerRef: MutableRefObject<null>;
-    component: React.FC<any>;
-  }[];
-}
 
-const ContentBar = ({ refElement }: ContentBarProps) => {
+
+const ContentBar = () => {
   return (
     <div className="flex  flex-col overflow-y-auto   h-full w-full">
-      {refElement.map((item) => item.component({ innerRef: item.innerRef }))}
-    </div>
+    <HomeSection/>
+    <About/>
+    <Projects/>
+    <Experience/>
+    <Skills/>
+    <Contact/>
+  </div>
   );
 };
 
