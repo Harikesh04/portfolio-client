@@ -1,3 +1,4 @@
+
 import React from "react";
 import SectionCardWrapper from "../SectionCardWrapper";
 import Button from "@/components/ui/Button";
@@ -7,10 +8,15 @@ import Profile from "../../../../../public/assets/profile.jpg";
 import Image from "next/image";
 import { about_data } from "@/constant/content_static_data";
 
-const About = () => {
+interface AboutSectionProps{
+  innerRef:React.MutableRefObject<null>;
+
+} 
+
+const About = ({innerRef}:AboutSectionProps) => {
   return (
     <SectionCardWrapper altered={true}>
-      <div className="h-[90vh] flex flex-col items-start p-6 ">
+      <div id='about'  ref={innerRef} className="h-[90vh] flex flex-col items-start p-12 ">
         <div>
           <p className="text-3xl font-bold mb-2">{about_data.title}</p>
           <div className="bg-secondary rounded-full h-2 w-8 mb-8"></div>

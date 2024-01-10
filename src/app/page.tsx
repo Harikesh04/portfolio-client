@@ -1,13 +1,12 @@
-import ContentBar from "@/components/home/ContentSection/ContentBar";
-import SidbeBar from "@/components/home/SideBar/SideBar";
+import Home from '@/components/home/Home'
+import React from 'react'
 
-
-export default function Home() {
+const page = () => {
   return (
-   <section className="flex h-full w-full ">
-    <SidbeBar/>
-    <ContentBar/>
-   
-   </section>
-  );
+    <section className="flex h-full w-full">
+      <Home/>
+    </section>
+  )
 }
+
+export default page

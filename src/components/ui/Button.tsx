@@ -11,9 +11,9 @@ interface ButtonProps {
 }
 
 const buttonStyles: Record<ButtonType, string> = {
-  default: "bg-secondary hover:bg-customBlack text-white",
+  default: "bg-secondary border border-secondary hover:border-white hover:bg-customBlack text-white",
   secondary: "text-white border border-white hover:bg-white hover:text-lightBlack",
-  primary:"text-white  bg-lightBlack hover:bg-secondary hover:text-white",
+  primary:"text-white    bg-lightBlack hover:bg-secondary hover:text-white",
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -28,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
   const buttonClasses = `px-4 py-3 transition-all shadow-md  duration-300  cursor-pointer  flex font-normal	 items-center justify-center gap-2 text-center cursor-pointer text-base ${buttonStyle} font-medium whitespace-nowrap rounded-full ${className}`;
 
   return (
-    <button className={buttonClasses} disabled={loading} onClick={onClick} {...props}>
+    <button className={buttonClasses}  type="submit" disabled={loading} onClick={onClick} {...props}>
       {loading ? 'Loading...' : children}
     </button>
   );

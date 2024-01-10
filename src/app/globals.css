@@ -22,6 +22,10 @@
       width: 0;
     }
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
   
 .loading {
     display: inline-block;
@@ -39,3 +43,12 @@
     border-radius: 50%;
     margin: 0 5px;
   }
+
+  ::-webkit-scrollbar {
+    width: 10px; 
+   
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0065ff;
+  border-radius: 10px;
+}

@@ -17,26 +17,32 @@ export const sidebar_data = [
   {
     icon: HiOutlineHome,
     title: "Home",
+    to:"home",
   },
   {
     icon: SlUser,
     title: "About",
+    to:"about",
   },
   {
     icon: GoProjectSymlink,
     title: "Projects",
+    to:"projects",
   },
   {
     icon: TbSchool,
     title: "Experience",
+    to:'experience'
   },
   {
     icon: CiPenpot,
     title: "Skills",
+    to:'skills'
   },
   {
     icon: IoCallOutline,
     title: "Contact",
+    to:'contact'
   },
 ];
 

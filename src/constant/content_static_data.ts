@@ -1,3 +1,7 @@
+import { FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+
+
 export const home_data = {
   title: "I’m Harikesh Singh",
   discription:
@@ -20,3 +24,52 @@ export const about_data = {
   Ready to embark on an innovation journey together?`,
   
 };
+
+export const contact_data={
+  title:"Get in touch 🤝",
+  description:"Let's create something together 🚀",
+  contact_info:[
+    {title:'Email me at',
+     icon:MdEmail,
+     value:'singhharikesh294@gmail.com'
+  
+
+    },{
+      title:'Location',
+      icon:FaLocationDot,
+      value:'India',
+    }
+  ],
+  contact_form:[
+    {
+      label: "Full Name",
+      name:'name',
+      type: "text",
+      required: true,
+      
+    },
+    {
+      label:'Email Address',
+      name:'email',
+      type: "email",
+      required: true,
+
+    },
+    {
+      label:'Subject',
+      name:'subject',
+      type: "text",
+      required: true,
+
+    },
+    {
+      label:'Message',
+      name:'message',
+      type: "textArea",
+      required: true,
+
+    }
+  ]
+
+
+}
