@@ -2,11 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-interface useIsVisibleProps {
-  ref: React.RefObject<HTMLElement>;
-}
 
-export default function useIsVisible({ ref }: useIsVisibleProps) {
+export default function useIsVisible(ref: React.MutableRefObject<null>) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -23,6 +20,7 @@ export default function useIsVisible({ ref }: useIsVisibleProps) {
         rootMargin: "-50px",
       }
     );
+
     if (ref.current) {
       observer.observe(ref.current);
     }
