@@ -39,7 +39,7 @@ const About = ({innerRef}:AboutSectionProps) => {
           />
 
           <div className="md:ml-8 text-center md:text-left">
-            <p className="text-lg font-bold mb-4">{about_data.intro}</p>
+            <p className="text-2xl text-secondary font-bold mb-4">{about_data.intro}</p>
             <div className="text-left">
               {about_data.description.split("\n").map((paragraph, index) => (
                 <p key={index} className="text-white leading-relaxed mb-2">

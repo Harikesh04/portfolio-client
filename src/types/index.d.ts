@@ -11,5 +11,6 @@ export type TCommonProps = {
     companyName: string;
     date: string;
     points: string[];
-    inView:boolean=false;
   } & Required<Omit<TCommonProps, "name">>;
+
+  export type TTechnology = Required<Omit<TCommonProps, "title">>;

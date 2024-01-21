@@ -17,9 +17,15 @@ interface ExperienceProps {
   innerRef: React.MutableRefObject<null>;
 }
 
-const ExperienceCard: React.FC<TExperience> = ({inView,...experience}) => {
+const ExperienceCard: React.FC<TExperience> = (experience) => {
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
   return (
     <VerticalTimelineElement
+    
     visible={inView}
       contentStyle={{
         background: "#1d1836",
@@ -38,7 +44,7 @@ const ExperienceCard: React.FC<TExperience> = ({inView,...experience}) => {
         </div>
       }
     >
-      <div>
+      <div ref={ref}>
         <h3 className="text-[24px] font-bold text-white">{experience.title}</h3>
         <p
           className="text-secondary text-[16px] font-semibold"
@@ -63,9 +69,7 @@ const ExperienceCard: React.FC<TExperience> = ({inView,...experience}) => {
 };
 
 const Experience = ({ innerRef }: ExperienceProps) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-  });
+  
 
   return (
     <SectionCardWrapper altered={true}>
@@ -75,10 +79,10 @@ const Experience = ({ innerRef }: ExperienceProps) => {
           <div className="bg-secondary rounded-full h-2 w-8 mb-8"></div>
         </div>
       </div>
-      <div ref={ref} className=" flex flex-col">
+      <div  className=" flex flex-col">
         <VerticalTimeline>
           {experience_data.experiences.map((experience, index) => {
-            return <ExperienceCard  key={index} inView={inView} {...experience} />;
+            return <ExperienceCard  key={index}  {...experience} />;
           })}
         </VerticalTimeline>
       </div>
