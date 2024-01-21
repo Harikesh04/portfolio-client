@@ -23,7 +23,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-gradient-to-r from-lightBlack to-black rounded-xl shadow-md">
+    <div className="max-w-md mx-auto p-6 bg-gradient-to-r from-tertiary to-black rounded-xl shadow-md">
       <form onSubmit={handleSubmit} className="p-2">
         <div className="flex flex-col">
           {fields.map((field:any, index:any) => (
@@ -39,7 +39,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
                   value={formState[field.name] || ""}
                   onChange={(e) => handleInputChange(field.name, e.target.value)}
                   required={field.required}
-                  className="mt-1 p-2 border outline-none rounded-md focus:outline-none bg-lightBlack text-slate-300"
+                  className="mt-1 p-2 border outline-none rounded-md focus:outline-none bg-tertiary text-slate-300"
                 />
               ) : (
                 <input
@@ -49,7 +49,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
                   required={field.required}
                   value={formState[field.name] || ""}
                   onChange={(e) => handleInputChange(field.name, e.target.value)}
-                  className="mt-1 p-2 border outline-none rounded-md focus:outline-none bg-lightBlack text-slate-300"
+                  className="mt-1 p-2 border outline-none rounded-md focus:outline-none bg-tertiary text-slate-300"
                 />
               )}
             </div>

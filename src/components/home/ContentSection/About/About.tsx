@@ -18,7 +18,7 @@ const About = ({innerRef}:AboutSectionProps) => {
     <SectionCardWrapper altered={true}>
       <div id='about'  ref={innerRef} className="h-[90vh] flex flex-col items-start p-12 ">
         <div>
-          <p className="text-3xl font-bold mb-2">{about_data.title}</p>
+          <p className="text-3xl text-white font-bold mb-2">{about_data.title}</p>
           <div className="bg-secondary rounded-full h-2 w-8 mb-8"></div>
         </div>
         <div className="flex flex-col md:flex-row items-center md:items-start">
@@ -42,7 +42,7 @@ const About = ({innerRef}:AboutSectionProps) => {
             <p className="text-lg font-bold mb-4">{about_data.intro}</p>
             <div className="text-left">
               {about_data.description.split("\n").map((paragraph, index) => (
-                <p key={index} className="text-gray-600 leading-relaxed mb-2">
+                <p key={index} className="text-white leading-relaxed mb-2">
                   {paragraph}
                 </p>
               ))}

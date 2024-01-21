@@ -11,7 +11,7 @@ const SectionCardWrapper = ({ children,altered=false }: SectionCardWrapperProps)
     <>
     <div className="ml-10 mr-36">
         <div className="py-10 w-full">
-        <div className={`bg-gradient-to-r ${altered ? ' from-white to-blue-100' : 'from-lightBlack to-black'} h-full rounded-3xl w-full`}>
+        <div className={`bg-gradient-to-r ${altered ? ' primary ' : 'primary'} h-full rounded-3xl w-full`}>
   {children}
 </div>
 
