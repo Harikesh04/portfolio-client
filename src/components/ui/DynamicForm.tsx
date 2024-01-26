@@ -7,20 +7,26 @@ import { SiMinutemailer } from "react-icons/si";
 
 interface DynamicFormProps {
   fields: any;
-  onSubmit: (formData: Record<string, string>) => void;
+  loading: boolean;
+  onSubmit: (formData: Record<string, string>, resetFormState: () => void) => void;
+
 }
 
-const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
+const DynamicForm: React.FC<DynamicFormProps> = ({ fields,loading, onSubmit }) => {
   const [formState, setFormState] = useState<Record<string, string>>({});
 
   const handleInputChange = (fieldName: string, value: string) => {
     setFormState({ ...formState, [fieldName]: value });
   };
 
+  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit(formState);
+    onSubmit(formState, () => setFormState({}));
   };
+
+  
 
   return (
     <div className="max-w-md mx-auto p-6 bg-black-100 rounded-xl shadow-md">
@@ -56,7 +62,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields, onSubmit }) => {
           ))}
         </div>
         <div>
-          <Button btnType={"default"}>Submit Message <SiMinutemailer/></Button>
+          <Button btnType={"default"} loading={loading}>Submit Message <SiMinutemailer/></Button>
         </div>
       </form>
     </div>
