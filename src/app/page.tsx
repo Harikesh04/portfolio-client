@@ -3,7 +3,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <section className="flex h-full w-full">
+    <section className="h-full   w-full">
       <Home/>
     </section>
   )

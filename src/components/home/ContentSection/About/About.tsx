@@ -17,7 +17,7 @@ interface AboutSectionProps{
 const About = ({innerRef}:AboutSectionProps) => {
   return (
     <SectionCardWrapper altered={true}>
-      <div id='about'  ref={innerRef} className="h-[90vh] flex flex-col items-start p-12 ">
+      <div id='about'  ref={innerRef} className=" flex flex-col items-start p-12 ">
         <div>
           <p className="text-3xl text-white font-bold mb-2">{about_data.title}</p>
           <div className="bg-secondary rounded-full h-2 w-8 mb-8"></div>

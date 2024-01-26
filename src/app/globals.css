@@ -44,7 +44,7 @@
     margin: 0 5px;
   }
 
-  ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 7px; 
    
 }

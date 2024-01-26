@@ -13,14 +13,14 @@ const Projects = ({ innerRef }: ProjectsProps) => {
       <div
         id={"projects"}
         ref={innerRef}
-        className="h-[400px] flex flex-col p-12 text-white"
+        className="h-full w-full  flex flex-col items-start  p-12 text-white"
       >
         <div>
           <p className="text-3xl font-bold mb-2">Personal Projects</p>
           <div className="bg-secondary rounded-full h-2 w-8 mb-8"></div>
         </div>
 
-        <div className="flex gap-6">
+        <div className="flex flex-col md:flex-row gap-6 xl:gap-10">
           {project_data.map((project, index) => (
             <Card key={index} data={project} />
           ))}

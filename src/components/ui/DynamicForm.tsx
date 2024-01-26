@@ -29,7 +29,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ fields,loading, onSubmit }) =
   
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-black-100 rounded-xl shadow-md">
+    <div className="lg:w-[30vw] mx-auto p-6 bg-black-100 rounded-xl shadow-md">
       <form onSubmit={handleSubmit} className="p-2">
         <div className="flex flex-col">
           {fields.map((field:any, index:any) => (

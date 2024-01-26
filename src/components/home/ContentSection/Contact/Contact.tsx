@@ -12,7 +12,7 @@ const Contact = ({ innerRef }: ContactSectionProps) => {
       <div
         id="contact"
         ref={innerRef}
-        className="h-[90vh]  flex flex-col  p-12  text-white"
+        className="h-[90vh]  flex flex-col w-full items-start  p-12  text-white"
       >
         <div>
           <p className="text-3xl font-bold mb-2">{contact_data.title}</p>
@@ -20,7 +20,7 @@ const Contact = ({ innerRef }: ContactSectionProps) => {
         </div>
         <div className="text-xl font-bold">{contact_data.description}</div>
 
-        <div className="flex w-full gap-5 mt-10">
+        <div className="flex flex-col gap-20 items-start  w-full lg:justify-between  mt-10">
           <div className="w-[40%] flex flex-col ">
             {contact_data.contact_info.map((item, index) => (
               <div key={index} className="flex gap-5 p-3 items-center">
@@ -35,7 +35,7 @@ const Contact = ({ innerRef }: ContactSectionProps) => {
             ))}
           </div>
 
-          <div className="w-full">
+          <div className="w-full  h-full ">
             <ContactForm/>
 
            

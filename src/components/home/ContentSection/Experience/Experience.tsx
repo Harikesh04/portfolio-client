@@ -73,19 +73,22 @@ const Experience = ({ innerRef }: ExperienceProps) => {
 
   return (
     <SectionCardWrapper altered={true}>
-      <div id="experience" ref={innerRef} className="  flex  p-12 text-white">
+
+      
+      <div id="experience" ref={innerRef} className="  flex flex-col gap-10 w-full  h-full p-12 text-white">
         <div>
           <p className="text-3xl font-bold mb-2">{experience_data.title}</p>
           <div className="bg-secondary rounded-full h-2 w-8 mb-8"></div>
         </div>
-      </div>
-      <div  className=" flex flex-col">
+        <div  className=" flex flex-col">
         <VerticalTimeline>
           {experience_data.experiences.map((experience, index) => {
             return <ExperienceCard  key={index}  {...experience} />;
           })}
         </VerticalTimeline>
       </div>
+      </div>
+      
     </SectionCardWrapper>
   );
 };

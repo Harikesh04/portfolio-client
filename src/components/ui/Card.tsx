@@ -28,7 +28,7 @@ const Card: React.FC<{ data: TCard }> = ({ data }) => {
 
   return (
     <motion.div
-      className="relative group min-h-[300px] rounded-lg w-[300px] overflow-hidden shadow-lg"
+      className="relative group  rounded-lg h-[20vmax] w-[20vmax] overflow-hidden shadow-lg"
       variants={cardVariants}
       initial="initial"
       animate="animate"

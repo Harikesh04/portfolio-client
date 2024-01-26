@@ -88,8 +88,8 @@ export default function Home() {
 
   return (
     <>
-      <SideBar activeSection={activeSection} />
-      <div className="flex  flex-col overflow-y-auto   h-full w-full">
+      {/* <SideBar activeSection={activeSection} /> */}
+      <div className="flex  flex-col   overflow-y-auto   h-full w-full">
       {refElement.map((item) => (
           <React.Fragment key={item.id}>
             {item.component({ innerRef: item.innerRef })}
