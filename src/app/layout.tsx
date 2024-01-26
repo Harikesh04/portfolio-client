@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}  `}>
+      <body className={`${inter.className} h-full w-full overflow-x-hidden `}>
         <div className="bg-primary flex items-center overflow-x-hidden justify-center h-screen w-screen">
           <Toaster />
 

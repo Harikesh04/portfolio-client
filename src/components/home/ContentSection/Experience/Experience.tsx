@@ -8,7 +8,6 @@ import {
 
 import { useInView } from "react-intersection-observer";
 
-
 import "react-vertical-timeline-component/style.min.css";
 import { TExperience } from "@/types";
 import Image from "next/image";
@@ -18,20 +17,18 @@ interface ExperienceProps {
 }
 
 const ExperienceCard: React.FC<TExperience> = (experience) => {
-
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
 
   return (
     <VerticalTimelineElement
-    
-    visible={inView}
+      visible={inView}
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
       }}
-      iconStyle={{ background: 'white' }}
+      iconStyle={{ background: "white" }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       icon={
@@ -69,26 +66,25 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
 };
 
 const Experience = ({ innerRef }: ExperienceProps) => {
-  
-
   return (
     <SectionCardWrapper altered={true}>
-
-      
-      <div id="experience" ref={innerRef} className="  flex flex-col gap-10 w-full  h-full p-12 text-white">
+      <div
+        id="experience"
+        ref={innerRef}
+        className="  flex flex-col gap-10 w-full  h-full p-12 text-white"
+      >
         <div>
           <p className="text-3xl font-bold mb-2">{experience_data.title}</p>
           <div className="bg-secondary rounded-full h-2 w-8 mb-8"></div>
         </div>
-        <div  className=" flex flex-col">
-        <VerticalTimeline>
-          {experience_data.experiences.map((experience, index) => {
-            return <ExperienceCard  key={index}  {...experience} />;
-          })}
-        </VerticalTimeline>
+        <div className=" flex flex-col">
+          <VerticalTimeline>
+            {experience_data.experiences.map((experience, index) => {
+              return <ExperienceCard key={index} {...experience} />;
+            })}
+          </VerticalTimeline>
+        </div>
       </div>
-      </div>
-      
     </SectionCardWrapper>
   );
 };
