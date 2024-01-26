@@ -33,6 +33,7 @@ const ContactForm = () => {
         }
       } catch (error) {
         console.log(error);
+        setFormStateCallback();
       } finally {
         setLoading(false);
       }

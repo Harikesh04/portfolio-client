@@ -7,6 +7,7 @@ import { MdMailOutline } from "react-icons/md";
 import Profile from "../../../../../public/assets/profile.jpg";
 import Image from "next/image";
 import { about_data } from "@/constant/content_static_data";
+import { handleCollaborate, handleDownload } from "@/helper/contactHandler";
 
 interface AboutSectionProps{
   innerRef:React.MutableRefObject<null>;
@@ -48,11 +49,11 @@ const About = ({innerRef}:AboutSectionProps) => {
               ))}
             </div>
             <div className="flex  gap-6 mt-5">
-            <Button >
+            <Button onClick={handleDownload}>
               <MdOutlineCloudDownload size={24} />
               Download CV
             </Button>
-            <Button btnType={'primary'}  >
+            <Button   onClick={handleCollaborate} btnType={'secondary'}  >
               <MdMailOutline size={24} />
               Collaborate
             </Button>

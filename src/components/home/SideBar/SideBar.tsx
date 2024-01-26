@@ -5,6 +5,7 @@ import {
   sidebar_data,
   social_media_data,
 } from "@/constant/sidebar_static_data";
+import Link from "next/link";
 
 interface SidebarProps {
   activeSection: string | null;
@@ -75,9 +76,9 @@ const Sidebar = ({ activeSection }: SidebarProps) => {
               className="flex cursor-pointer w-9 h-9 rounded-full justify-center items-center py-2 group"
               key={index}
             >
-              <div className="bg-secondary rounded-full p-2 group-hover:bg-white transition-all duration-300">
+              <Link href={item.to} className="bg-secondary rounded-full p-2 group-hover:bg-white transition-all duration-300">
                 <item.icon className="text-white text-xl group-hover:text-secondary transition-all duration-300" />
-              </div>
+              </Link>
             </div>
           ))}
         </div>
