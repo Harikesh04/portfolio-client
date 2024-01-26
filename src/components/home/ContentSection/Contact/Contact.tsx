@@ -12,7 +12,7 @@ const Contact = ({ innerRef }: ContactSectionProps) => {
       <div
         id="contact"
         ref={innerRef}
-        className="h-[90vh]  flex flex-col  p-12  text-black"
+        className="h-[90vh]  flex flex-col  p-12  text-white"
       >
         <div>
           <p className="text-3xl font-bold mb-2">{contact_data.title}</p>

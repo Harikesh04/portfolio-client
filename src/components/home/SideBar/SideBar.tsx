@@ -19,7 +19,7 @@ const Sidebar = ({ activeSection }: SidebarProps) => {
 
   return (
     <div className="py-10 w-[35vw] flex items-end">
-      <div className="bg-lightBlack flex flex-col p-7 h-full rounded-3xl w-[20vw] ml-auto">
+      <div className="bg-tertiary flex flex-col p-7 h-full rounded-3xl w-[20vw] ml-auto">
         <div>
           <Image
             src={Profile}
@@ -54,7 +54,7 @@ const Sidebar = ({ activeSection }: SidebarProps) => {
              activeSection === item.to
                ? "text-secondary border-blue-600"
                : "text-white"
-           } px-2 py-1  border-lightBlack  transition duration-300 `}
+           } px-2 py-1  border-tertiary  transition duration-300 `}
            key={index}
          >
            <item.icon className={`text-xl ${activeSection === item.to ? "text-secondary" : "text-white"} transition duration-300`} />
