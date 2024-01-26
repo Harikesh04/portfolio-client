@@ -29,7 +29,8 @@ const Skills = ({ innerRef }: SkillsSectionProps) => {
       </div>
       </div>
     </SectionCardWrapper>
-  );
-};
+  )
+  
+}
 
 export default Skills;
