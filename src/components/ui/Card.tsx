@@ -28,7 +28,7 @@ const Card: React.FC<{ data: TCard }> = ({ data }) => {
 
   return (
     <motion.div
-      className="relative group  rounded-lg h-[20vmax] w-[20vmax] overflow-hidden shadow-lg"
+      className="relative group  rounded-lg h-[23vmax] w-[25vmax] overflow-hidden shadow-lg"
       variants={cardVariants}
       initial="initial"
       animate="animate"
@@ -69,7 +69,7 @@ const Card: React.FC<{ data: TCard }> = ({ data }) => {
            
             animate={{ y: 0, opacity: 1 }} initial={{ y: 20, opacity: 0 }} transition={{ duration: 0.5 }}
           >
-            <div  className="h-10 w-10 flex items-center  justify-center text-secondary bg-white p-2 rounded-full text-lg">
+            <div  className="h-10 w-10 absolute bottom-12 flex items-center  justify-center text-secondary bg-white p-2 rounded-full text-lg">
 
             <HiExternalLink/>
             </div>
