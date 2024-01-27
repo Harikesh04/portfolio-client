@@ -202,10 +202,10 @@ export const technologies: TTechnology[] = [
     name: "Figma",
     icon: figma.src,
   },
-  {
-    name: "Three JS",
-    icon: threejs.src,
-  },
+  // {
+  //   name: "Three JS",
+  //   icon: threejs.src,
+  // },
   {
     name: "git",
     icon: git.src,
