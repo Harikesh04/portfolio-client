@@ -14,29 +14,37 @@ const LeftBarWrapper = ({ children }: LeftBarT) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMobileView, setIsMobileView] = useState(false);
 
-  function handleClose(){
+  useEffect(() => {
+    let isMobile = window.matchMedia("(max-width: 800px)").matches;
+    setIsMobileView(isMobile);
+
+    const handleResize = () => {
+      setIsMobileView(window.matchMedia("(max-width: 800px)").matches);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  function handleClose() {
     setIsOpen(false);
   }
 
-
-  return true ? (
+  return isMobileView ? (
     <div>
       <span
-        className="text-secondary absolute right-4 top-3 text-3xl p-1 z-30 "
+        className="text-secondary absolute right-4 top-3 text-3xl p-1 z-30"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-      { isOpen ?<RxCrossCircled/>: <RxHamburgerMenu />}
+        {isOpen ? <RxCrossCircled /> : <RxHamburgerMenu />}
       </span>
-      
+
       <Drawer isOpen={isOpen} onClose={handleClose}>
         {children}
-
-
       </Drawer>
-
-
-
-     
     </div>
   ) : (
     <>{children}</>
