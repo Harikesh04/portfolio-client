@@ -10,6 +10,7 @@ import About from "@/components/home/ContentSection/About/About";
 import HomeSection from "@/components/home/ContentSection/Home/HomeSection";
 import useIsVisible from "@/helper/customHooks/useIsVisible";
 import { MdOutlineArrowUpward } from "react-icons/md";
+import LeftBarWrapper from "./SideBar/LeftBarWrapper";
 
 interface ComponentProps {
   innerRef: React.MutableRefObject<null>;
@@ -92,7 +93,13 @@ export default function Home() {
 
   return (
     <>
-      <SideBar activeSection={activeSection} />
+
+    <LeftBarWrapper>
+    <SideBar activeSection={activeSection} />
+
+    </LeftBarWrapper>
+    
+      
       <div className="flex  flex-col   overflow-y-auto   h-full w-full">
       {refElement.map((item) => (
           <React.Fragment key={item.id}>

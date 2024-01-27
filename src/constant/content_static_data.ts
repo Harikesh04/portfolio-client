@@ -152,66 +152,66 @@ export const experience_data = {
 export const technologies: TTechnology[] = [
   {
     name: "HTML 5",
-    icon: html,
+    icon: html.src,
   },
   {
     name: "CSS 3",
-    icon: css,
+    icon: css.src,
   },
   {
     name: "JavaScript",
-    icon: javascript,
+    icon: javascript.src,
   },
   {
     name: "TypeScript",
-    icon: typescript,
+    icon: typescript.src,
   },
   {
     name: "React JS",
-    icon: reactjs,
+    icon: reactjs.src,
   },
   {
     name: "Next JS",
-    icon: next,
+    icon: next.src,
   },
   {
     name: "Redux Toolkit",
-    icon: redux,
+    icon: redux.src,
   },
   {
     name: "Tailwind CSS",
-    icon: tailwind,
+    icon: tailwind.src,
   },
   {
     name: "Node JS",
-    icon: nodejs,
+    icon: nodejs.src,
   },
   {
     name: "MongoDB",
-    icon: mongodb,
+    icon: mongodb.src,
   },
   {
     name: "AWS",
-    icon: aws,
+    icon: aws.src,
   },
   {
     name: "My SQL",
-    icon: sql,
+    icon: sql.src,
   },
   {
     name: "Figma",
-    icon: figma,
+    icon: figma.src,
   },
   {
     name: "Three JS",
-    icon: threejs,
+    icon: threejs.src,
   },
   {
     name: "git",
-    icon: git,
+    icon: git.src,
   },
   {
     name: "docker",
-    icon: docker,
+    icon: docker.src,
   },
 ];
