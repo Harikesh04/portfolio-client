@@ -4,6 +4,9 @@ import Button from "@/components/ui/Button";
 import { RiDashboardLine } from "react-icons/ri";
 import { MdMailOutline } from "react-icons/md";
 import { handleCollaborate, handleDownload } from "@/helper/contactHandler";
+import {motion} from "framer-motion"
+import { fadeInUpAnimation, textVariants } from "@/components/framer-motion/variants";
+
 
 interface HomeSectionProps {
   innerRef: React.MutableRefObject<null>;
@@ -18,10 +21,10 @@ const HomeSection = ({ innerRef }: HomeSectionProps) => {
         className="h-[90vh]  w-full   my-auto flex justify-center items-center p-12  text-white"
       >
         <div className="max-w-4xl text-center">
-          <h1 className="text-5xl font-extrabold mb-4">{home_data.title}</h1>
-          <div className="bg-secondary mx-auto rounded-full h-2 w-20 mb-8"></div>
-          <p className="text-lg  mb-8">{home_data.discription}</p>
-          <div className="flex justify-center gap-6">
+          <motion.h1 {...textVariants} className="text-5xl font-extrabold mb-4">{home_data.title}</motion.h1>
+          <motion.div  {...fadeInUpAnimation} className="bg-secondary mx-auto rounded-full h-2 w-20 mb-8"></motion.div>
+          <motion.div {...fadeInUpAnimation} className="text-lg  mb-8">{home_data.discription}</motion.div>
+          <motion.div {...fadeInUpAnimation}  className="flex justify-center gap-6">
             <Button onClick={handleDownload}>
               <RiDashboardLine size={24} />
               Download CV
@@ -30,7 +33,7 @@ const HomeSection = ({ innerRef }: HomeSectionProps) => {
               <MdMailOutline size={24} />
               Collaborate
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </SectionCardWrapper>

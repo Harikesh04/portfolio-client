@@ -11,6 +11,8 @@ import HomeSection from "@/components/home/ContentSection/Home/HomeSection";
 import useIsVisible from "@/helper/customHooks/useIsVisible";
 import { MdOutlineArrowUpward } from "react-icons/md";
 import LeftBarWrapper from "./SideBar/LeftBarWrapper";
+import { motion } from "framer-motion";
+import { dashboardVariants } from "../framer-motion/variants";
 
 interface ComponentProps {
   innerRef: React.MutableRefObject<null>;
@@ -102,13 +104,20 @@ export default function Home() {
           </React.Fragment>
         ))}
       </div>
+
       {activeSection !== "home" && (
-        <div
+        <motion.div
+          variants={dashboardVariants}
+          initial="hidden"
+          animate="visible"
           onClick={handleMoveOnTop}
-          className="absolute bg-secondary transition-all duration-300 hover:bg-white hover:text-secondary p-3 text-3xl font-bold text-white cursor-pointer rounded-full bottom-10 right-10"
         >
-          <MdOutlineArrowUpward />
-        </div>
+          <motion.div   variants={dashboardVariants}
+        whileTap="whileTap" className="absolute bg-secondary  hover:bg-white hover:text-secondary p-3 text-3xl font-bold text-white cursor-pointer rounded-full bottom-10 right-10">
+
+            <MdOutlineArrowUpward />
+          </motion.div>
+        </motion.div>
       )}
     </>
   );
