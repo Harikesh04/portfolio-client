@@ -24,11 +24,13 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
   return (
     <VerticalTimelineElement
       visible={inView}
+      className={"w-[75vw]  sm:w-auto"}
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
-      }}
-      iconStyle={{ background: "white" }}
+       
+      }} 
+       iconStyle={{ background: "white" }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       icon={
@@ -51,11 +53,11 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
         </p>
       </div>
 
-      <ul className="ml-5 mt-5 list-disc space-y-2">
+      <ul className="ml-5 mt-5  list-disc space-y-2">
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="text-white-100 pl-1 text-[14px] tracking-wider"
+            className="text-white-100 pl-1 text-[14px] "
           >
             {point}
           </li>
@@ -66,12 +68,14 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
 };
 
 const Experience = ({ innerRef }: ExperienceProps) => {
+
+
   return (
     <SectionCardWrapper altered={true}>
       <div
         id="experience"
         ref={innerRef}
-        className="  flex flex-col gap-10 w-full  h-full p-12 text-white"
+        className="  flex flex-col gap-10 w-full  p-12 text-white"
       >
         <div>
           <p className="text-3xl font-bold mb-2">{experience_data.title}</p>

@@ -22,7 +22,7 @@ interface RefElementItem {
 }
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<string | null>("home");
 
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -75,8 +75,12 @@ export default function Home() {
   const firstVisibleSection = visibilityData.find((item) => item.isVisible);
 
   useEffect(() => {
+
     if (firstVisibleSection) {
       setActiveSection(firstVisibleSection.id);
+    }else{
+      setActiveSection("experience");
+
     }
   }, [firstVisibleSection]);
 

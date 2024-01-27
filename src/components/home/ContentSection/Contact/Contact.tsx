@@ -21,9 +21,9 @@ const Contact = ({ innerRef }: ContactSectionProps) => {
         <div className="text-xl font-bold">{contact_data.description}</div>
 
         <div className="flex flex-col lg:flex-row gap-20 items-start  w-full lg:justify-between  mt-10">
-          <div className="w-[40%] flex flex-col ">
+          <div className="w-full flex flex-col ">
             {contact_data.contact_info.map((item, index) => (
-              <div key={index} className="flex gap-5 p-3 items-center">
+              <div key={index} className="flex gap-5 py-3 items-center">
                 <div className="text-white p-3 rounded-full  text-xl bg-secondary">
                   <item.icon />
                 </div>

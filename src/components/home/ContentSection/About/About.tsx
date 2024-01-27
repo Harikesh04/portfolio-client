@@ -17,12 +17,12 @@ interface AboutSectionProps{
 const About = ({innerRef}:AboutSectionProps) => {
   return (
     <SectionCardWrapper altered={true}>
-      <div id='about'  ref={innerRef} className=" flex flex-col items-start p-12 ">
+      <div id='about'  ref={innerRef} className=" flex justify-center   w-full  flex-col items-start p-12 ">
         <div>
-          <p className="text-3xl text-white font-bold mb-2">{about_data.title}</p>
+          <p className="text-3xl text-white  font-bold mb-2">{about_data.title}</p>
           <div className="bg-secondary rounded-full h-2 w-8 mb-8"></div>
         </div>
-        <div className="flex flex-col md:flex-row items-center md:items-start">
+        <div className="flex  w-full flex-col md:flex-row items-center gap-5  md:items-start">
           <Image
             src={Profile}
             width={150}
@@ -34,16 +34,16 @@ const About = ({innerRef}:AboutSectionProps) => {
               borderRadius: "50%",
               width: 150,
               height: 150,
-              borderColor:'#0065ff', borderWidth:'2px'
+              borderColor:'white', borderWidth:'2px'
             }}
             alt="Picture of the author"
           />
 
-          <div className="md:ml-8 text-center md:text-left">
+          <div className=" md:ml-8   text-center md:text-left">
             <p className="text-2xl text-secondary font-bold mb-4">{about_data.intro}</p>
-            <div className="text-left">
+            <div className="text-left ">
               {about_data.description.split("\n").map((paragraph, index) => (
-                <p key={index} className="text-white leading-relaxed mb-2">
+                <p key={index} className="text-white px-4 leading-relaxed mb-2">
                   {paragraph}
                 </p>
               ))}

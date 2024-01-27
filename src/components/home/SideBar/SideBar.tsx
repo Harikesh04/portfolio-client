@@ -18,6 +18,7 @@ const Sidebar = ({ activeSection }: SidebarProps) => {
     anchor && anchor.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
+
   return (
     <div className="py-10 w-[35vw] flex items-end">
       <div className="bg-tertiary flex flex-col p-7 h-full rounded-3xl w-[20vw] ml-auto">
