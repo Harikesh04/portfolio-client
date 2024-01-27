@@ -2,6 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { HiExternalLink } from "react-icons/hi";
+import {
+  cardsAnimation,
+  imageVariants,
+  overlayVariants,
+} from "../framer-motion/variants";
 
 interface TCard {
   title: string;
@@ -11,28 +16,11 @@ interface TCard {
 }
 
 const Card: React.FC<{ data: TCard }> = ({ data }) => {
-  const cardVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-  };
-
-  const overlayVariants = {
-    hidden: { opacity: 0, y: "100%" },
-    visible: { opacity: 0.85, y: 0 },
-  };
-
-  const imageVariants = {
-    normal: { scale: 1 },
-    zoomed: { scale: 1.05 },
-  };
-
   return (
     <motion.div
       className="relative group  rounded-lg h-[20vmax] w-[20vmax] overflow-hidden shadow-lg"
-      variants={cardVariants}
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
+      // variants={cardVariants}
+      {...cardsAnimation}
     >
       {/* Default Image */}
       <motion.div

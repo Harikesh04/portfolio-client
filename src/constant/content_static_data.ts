@@ -26,7 +26,7 @@ import sql from "../assets/tech/sql.png";
 export const home_data = {
   title: "I’m Harikesh Singh",
   discription:
-    "Full-stack Engineer and open-source contributor with a commitment to advancing humanity. Passionate about technology, enjoys experimenting with keyboards, and a fitness enthusiast.",
+    "Full-stack Engineer and open-source contributor . Passionate about technology and a fitness enthusiast.",
 };
 
 export const about_data = {
