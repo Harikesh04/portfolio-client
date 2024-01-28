@@ -97,14 +97,12 @@ export default function Home() {
         <SideBar activeSection={activeSection} />
       </LeftBarWrapper>
 
-      <div className="flex  flex-col   overflow-y-auto   h-full w-full">
+      <div className="flex  flex-col md:px-10   overflow-y-auto   h-full w-full">
         {refElement.map((item) => (
           <React.Fragment key={item.id}>
             {item.component({ innerRef: item.innerRef })}
           </React.Fragment>
         ))}
-
-        
         
       </div>
 
@@ -116,7 +114,7 @@ export default function Home() {
           onClick={handleMoveOnTop}
         >
           <motion.div   variants={dashboardVariants}
-        whileTap="whileTap" className="absolute bg-secondary  hover:bg-white hover:text-secondary p-3 text-3xl font-bold text-white cursor-pointer rounded-full bottom-10 right-10">
+        whileTap="whileTap" className="absolute bg-secondary  hover:bg-white hover:text-secondary p-3 text-3xl font-bold text-white cursor-pointer rounded-full bottom-14 right-5  md:bottom-10 md:right-10">
 
             <MdOutlineArrowUpward />
           </motion.div>

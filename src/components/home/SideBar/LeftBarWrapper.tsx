@@ -12,14 +12,17 @@ interface LeftBarT {
 
 const LeftBarWrapper = ({ children }: LeftBarT) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isMobileView, setIsMobileView] = useState(false);
+  const [isMobileView, setIsMobileView] = useState<boolean>(false);
 
   useEffect(() => {
-    let isMobile = window.matchMedia("(max-width: 800px)").matches;
-    setIsMobileView(isMobile);
+    const checkMobileView = () => {
+      setIsMobileView(window.innerWidth <= 900);
+    };
+
+    checkMobileView(); // Initial check
 
     const handleResize = () => {
-      setIsMobileView(window.matchMedia("(max-width: 800px)").matches);
+      checkMobileView();
     };
 
     window.addEventListener("resize", handleResize);
