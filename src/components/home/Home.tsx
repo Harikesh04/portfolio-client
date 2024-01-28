@@ -12,7 +12,7 @@ import { MdOutlineArrowUpward } from "react-icons/md";
 import LeftBarWrapper from "./SideBar/LeftBarWrapper";
 import { motion } from "framer-motion";
 import { dashboardVariants } from "../framer-motion/variants";
-import IsRefVisible from "@/helper/Functions/isRefVisible";
+import IsRefVisible from "@/helper/IsRefVisible";
 
 interface ComponentProps {
   innerRef: React.MutableRefObject<null>;

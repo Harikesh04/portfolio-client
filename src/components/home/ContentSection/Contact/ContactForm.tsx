@@ -25,7 +25,12 @@ const ContactForm = () => {
 
         if (response.ok) {
           const data = await response.json();
-          toast.success(data.message);
+          if (data.success) {
+            toast.success(data.message);
+          } else {
+            toast.error(data.message);
+          }
+
           setFormStateCallback();
         } else {
           const data = await response.json();
