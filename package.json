@@ -31,7 +31,6 @@
     "@types/react-vertical-timeline-component": "^3.3.6",
     "@types/three": "^0.160.0",
     "autoprefixer": "^10.0.1",
-    "dotenv": "^16.4.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
