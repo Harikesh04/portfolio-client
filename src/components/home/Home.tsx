@@ -13,6 +13,7 @@ import { MdOutlineArrowUpward } from "react-icons/md";
 import LeftBarWrapper from "./SideBar/LeftBarWrapper";
 import { motion } from "framer-motion";
 import { dashboardVariants } from "../framer-motion/variants";
+import StarsCanvas from "../canvas/Stars";
 
 interface ComponentProps {
   innerRef: React.MutableRefObject<null>;
@@ -103,6 +104,9 @@ export default function Home() {
             {item.component({ innerRef: item.innerRef })}
           </React.Fragment>
         ))}
+
+        
+        
       </div>
 
       {activeSection !== "home" && (

@@ -12,15 +12,18 @@ const SectionCardWrapper = ({
   return (
     <>
      
-        <div className="  w-full">
+        <div className="relative   w-full">
           <div
             className={`bg-gradient-to-r ${
               altered ? " primary " : "primary"
             }  h-full flex justify-center rounded-3xl w-full`}
           >
             {children}
+           
           </div>
+          
         </div>
+         
 
     </>
   );
