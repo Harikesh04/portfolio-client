@@ -66,13 +66,13 @@ export const fadeInUpAnimation = {
 export const cardsAnimation = {
   initial: {
     opacity: 0,
-    scale: 0.8, // Initial scale adjusted for a more subtle effect
+    scale: 0.6, // Initial scale adjusted for a more subtle effect
   },
   whileInView: {
     opacity: 1,
     scale: 1,
     transition: {
-      opacity: { duration: 0.5, ease: "easeOut" },
+      opacity: { duration: 0.4, ease: "easeOut" },
       scale: { duration: 0.4, ease: "easeOut" },
     },
   },
@@ -97,6 +97,25 @@ export const imageVariants = {
     transition: {
       duration: 0.5,
       ease: "easeOut",
+    },
+  },
+};
+
+
+export const springAnimation = {
+  initial: {
+    opacity: 0,
+    scale: 0.8, // Initial scale
+    rotate: -45, // Initial rotation
+  },
+  whileInView: {
+    scale: 1, // Final scale
+    rotate: 0, // Final rotation
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      duration: 0.7,
+      ease: "easeInOut",
     },
   },
 };

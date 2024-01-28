@@ -28,15 +28,17 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
-       
-      }} 
-       iconStyle={{ background: "white" }}
+      }}
+      iconStyle={{ background: "white" }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       icon={
         <div className="flex h-full w-full items-center justify-center">
           <Image
             src={experience.icon}
+            placeholder="blur"
+            width={100}
+            height={100}
             alt={experience.companyName}
             className="h-[60%] w-[60%] object-contain"
           />
@@ -68,8 +70,6 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
 };
 
 const Experience = ({ innerRef }: ExperienceProps) => {
-
-
   return (
     <SectionCardWrapper altered={true}>
       <div

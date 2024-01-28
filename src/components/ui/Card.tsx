@@ -31,10 +31,11 @@ const Card: React.FC<{ data: TCard }> = ({ data }) => {
       >
         <Image
           src={data.icon}
+          placeholder="blur"
           alt={data.title}
           layout="fill"
           objectFit="cover"
-          quality={100}
+          quality={90}
         />
 
         <motion.div

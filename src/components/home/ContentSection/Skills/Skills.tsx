@@ -3,7 +3,7 @@ import SectionCardWrapper from "../SectionCardWrapper";
 import { technologies } from "@/constant/content_static_data";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {  fadeInUpAnimation } from "@/components/framer-motion/variants";
+import {  springAnimation } from "@/components/framer-motion/variants";
 
 interface SkillsSectionProps {
   innerRef: React.MutableRefObject<null>;
@@ -24,11 +24,12 @@ const Skills = ({ innerRef }: SkillsSectionProps) => {
 
         <div className="flex flex-row flex-wrap items-center justify-center gap-10">
           {technologies.map((technology) => (
-            <motion.div {...fadeInUpAnimation} className="h-28 w-28" key={technology.name}>
+            <motion.div {...springAnimation} className="h-28 w-28" key={technology.name}>
               <Image
                 src={technology.icon}
                 width={100}
                 height={100}
+                placeholder="blur"
                 className="rounded-full"
                 alt="Skills"
               />

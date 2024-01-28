@@ -29,7 +29,6 @@ const About = ({innerRef}:AboutSectionProps) => {
             src={Profile}
             width={150}
             height={150}
-            priority={true}
             placeholder="blur"
             className="rounded-full"
             style={{
