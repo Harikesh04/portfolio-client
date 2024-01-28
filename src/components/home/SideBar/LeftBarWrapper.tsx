@@ -1,7 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { RxCrossCircled } from "react-icons/rx";
+
+import Drawer from "./Drawer";
 
 interface LeftBarT {
   children: React.ReactNode;
@@ -11,33 +14,40 @@ const LeftBarWrapper = ({ children }: LeftBarT) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMobileView, setIsMobileView] = useState(false);
 
+  useEffect(() => {
+    let isMobile = window.matchMedia("(max-width: 800px)").matches;
+    setIsMobileView(isMobile);
 
-  return true ? (
+    const handleResize = () => {
+      setIsMobileView(window.matchMedia("(max-width: 800px)").matches);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  function handleClose() {
+    setIsOpen(false);
+  }
+
+  return isMobileView ? (
     <div>
       <span
-        className="text-secondary absolute left-3 text-xl p-1 z-30 "
+        className="text-secondary absolute right-4 top-3 text-3xl p-1 z-30"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <GiHamburgerMenu />
+        {isOpen ? <RxCrossCircled /> : <RxHamburgerMenu />}
       </span>
 
-      <div
-        className={
-          "fixed overflow-auto z-50 inset-0 transform ease-in-out  " +
-          (isOpen
-            ? `transition-opacity opacity-100 duration-500 
-								 -translate-x-0" 
-						    top-[70px]`
-            : `transition-all delay-500 opacity-0 
--translate-x-full" 
-						   `)
-        }
-      >
+      <Drawer isOpen={isOpen} onClose={handleClose}>
         {children}
-      </div>
+      </Drawer>
     </div>
   ) : (
-    <div>{children}</div>
+    <>{children}</>
   );
 };
 

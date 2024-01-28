@@ -11,6 +11,9 @@ import HomeSection from "@/components/home/ContentSection/Home/HomeSection";
 import useIsVisible from "@/helper/customHooks/useIsVisible";
 import { MdOutlineArrowUpward } from "react-icons/md";
 import LeftBarWrapper from "./SideBar/LeftBarWrapper";
+import { motion } from "framer-motion";
+import { dashboardVariants } from "../framer-motion/variants";
+import StarsCanvas from "../canvas/Stars";
 
 interface ComponentProps {
   innerRef: React.MutableRefObject<null>;
@@ -76,12 +79,10 @@ export default function Home() {
   const firstVisibleSection = visibilityData.find((item) => item.isVisible);
 
   useEffect(() => {
-
     if (firstVisibleSection) {
       setActiveSection(firstVisibleSection.id);
-    }else{
+    } else {
       setActiveSection("experience");
-
     }
   }, [firstVisibleSection]);
 
@@ -93,27 +94,34 @@ export default function Home() {
 
   return (
     <>
+      <LeftBarWrapper>
+        <SideBar activeSection={activeSection} />
+      </LeftBarWrapper>
 
-    <LeftBarWrapper>
-    <SideBar activeSection={activeSection} />
-
-    </LeftBarWrapper>
-    
-      
       <div className="flex  flex-col   overflow-y-auto   h-full w-full">
-      {refElement.map((item) => (
+        {refElement.map((item) => (
           <React.Fragment key={item.id}>
             {item.component({ innerRef: item.innerRef })}
           </React.Fragment>
         ))}
+
+        
+        
       </div>
+
       {activeSection !== "home" && (
-        <div
+        <motion.div
+          variants={dashboardVariants}
+          initial="hidden"
+          animate="visible"
           onClick={handleMoveOnTop}
-          className="absolute bg-secondary transition-all duration-300 hover:bg-white hover:text-secondary p-3 text-3xl font-bold text-white cursor-pointer rounded-full bottom-10 right-10"
         >
-          <MdOutlineArrowUpward />
-        </div>
+          <motion.div   variants={dashboardVariants}
+        whileTap="whileTap" className="absolute bg-secondary  hover:bg-white hover:text-secondary p-3 text-3xl font-bold text-white cursor-pointer rounded-full bottom-10 right-10">
+
+            <MdOutlineArrowUpward />
+          </motion.div>
+        </motion.div>
       )}
     </>
   );
