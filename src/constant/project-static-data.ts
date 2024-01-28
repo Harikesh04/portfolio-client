@@ -8,14 +8,14 @@ export const project_data: TProject[] = [
         title:"Cartzilla",
         name:" A stunning e-commerce platform",
         link:"https://cartzilla-mauve.vercel.app/",
-        icon:cartzillaImg.src,
+        icon:cartzillaImg,
 
     },
     {
         title:"Chatz ",
         name:"Chat application with public and private rooms",
         link:"https://chatzz-harikesh.netlify.app/",
-        icon:chatz.src,
+        icon:chatz,
 
     },
   ];

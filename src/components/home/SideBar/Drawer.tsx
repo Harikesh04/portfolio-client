@@ -11,7 +11,7 @@ const Drawer = ({ children, isOpen,onClose }: DrawerT) => {
   return (
     <div
       className={
-        "fixed overflow-auto z-50 inset-0 transform ease-in-out  " +
+        "fixed  z-50 h-screen  inset-0 transform ease-in-out  " +
         (isOpen
           ? `transition-opacity opacity-100 duration-500 ${
               isLeftType ? "-translate-x-0" : "translate-x-0"
@@ -31,7 +31,7 @@ const Drawer = ({ children, isOpen,onClose }: DrawerT) => {
             : `${isLeftType ? "-translate-x-full" : "translate-x-full"}`)
         }
       >
-        <div className="relative bg-tertiary h-screen min-w-[250px] w-[75vw] md:w-[40vw] overflow-y-auto  flex  ">
+        <div className="relative bg-tertiary overflowy--auto h-full min-w-[250px] w-[75vw] md:w-[40vw] overflow-y-auto  flex  ">
 			
           {children}
         </div>
