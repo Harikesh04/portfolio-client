@@ -12,7 +12,7 @@ import { MdOutlineArrowUpward } from "react-icons/md";
 import LeftBarWrapper from "./SideBar/LeftBarWrapper";
 import { motion } from "framer-motion";
 import { dashboardVariants } from "../framer-motion/variants";
-import isRefVisible from "@/helper/Functions/isRefVisible";
+import IsRefVisible from "@/helper/Functions/isRefVisible";
 
 interface ComponentProps {
   innerRef: React.MutableRefObject<null>;
@@ -71,7 +71,7 @@ export default function Home() {
   const visibilityData = refElement.map((item) => {
     return {
       id: item.id,
-      isVisible: isRefVisible(item.innerRef),
+      isVisible: IsRefVisible(item.innerRef),
     };
   });
 
