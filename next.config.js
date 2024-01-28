@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+
+import path from 'path';
+
+require('dotenv').config({ path: path.resolve(process.cwd(),'.vercel/env.production.local') });
 
 module.exports = nextConfig
