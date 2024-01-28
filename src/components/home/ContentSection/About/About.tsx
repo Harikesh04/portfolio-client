@@ -24,7 +24,7 @@ const About = ({innerRef}:AboutSectionProps) => {
           <p className="text-3xl text-white  font-bold mb-2">{about_data.title}</p>
           <div className="bg-secondary rounded-full h-2 w-8 mb-8"></div>
         </div>
-        <div className="flex  w-full flex-col md:flex-row my-20 items-center gap-5  md:items-start">
+        <div className="flex  w-full flex-col md:flex-row my-10  lg:my-20 items-center gap-5  md:items-start">
           <Image
             src={Profile}
             width={150}
@@ -43,14 +43,14 @@ const About = ({innerRef}:AboutSectionProps) => {
 
           <div className=" md:ml-8   text-center md:text-left">
             <motion.p {...fadeInUpAnimation} className="text-2xl text-secondary font-bold mb-4">{about_data.intro}</motion.p>
-            <div className="text-left ">
+            <div className="md:text-left text-center ">
               {about_data.description.split("\n").map((paragraph, index) => (
-                <motion.p {...fadeInUpAnimation} key={index} className="text-white px-4 leading-relaxed mb-2">
+                <motion.p {...fadeInUpAnimation} key={index} className="text-white leading-relaxed mb-2">
                   {paragraph}
                 </motion.p>
               ))}
             </div>
-            <motion.div {...fadeInUpAnimation} className="flex  gap-6 mt-5">
+            <motion.div {...fadeInUpAnimation} className="flex md:justify-start  justify-center gap-6 mt-5">
             <Button onClick={handleDownload}>
               <MdOutlineCloudDownload size={24} />
               Download CV

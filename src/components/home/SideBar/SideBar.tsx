@@ -20,7 +20,7 @@ const Sidebar = ({ activeSection }: SidebarProps) => {
 
 
   return (
-    <div className="py-10 w-[25vw] flex items-end">
+    <div className="py-10 ml-5 w-[25vw] h-full flex items-end">
       <div className="bg-tertiary flex flex-col p-7 h-full rounded-3xl mx-auto max-w-max ">
         <div>
           <Image

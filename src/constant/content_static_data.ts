@@ -31,8 +31,8 @@ export const home_data = {
 
 export const about_data = {
   title: "About Me",
-  intro: "🚀 Full Stack Developer with 2 years of experience.",
-  description: `Passionate about creating seamless user experiences for challenging projects. Let's collaborate and craft something extraordinary together! 🌟`,
+  intro: "Hello World! 👋",
+  description: `🚀 Full Stack Engineer with 2 years of experience . Passionate about creating seamless user experiences for challenging projects. Let's collaborate and craft something extraordinary together! 🌟`,
 };
 
 

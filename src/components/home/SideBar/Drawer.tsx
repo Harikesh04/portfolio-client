@@ -25,13 +25,13 @@ const Drawer = ({ children, isOpen,onClose }: DrawerT) => {
         className={
           `h-screen  ${
             isLeftType ? "left-0" : "right-0"
-          } absolute  w-[75vw]   shadow-xl delay-400 duration-500 ease-in-out transition-all transform ` +
+          } absolute  w-[75vw] min-w-[250px] md:w-[40vw]  shadow-xl delay-400 duration-500 ease-in-out transition-all transform ` +
           (isOpen
             ? `${isLeftType ? "-translate-x-0" : "translate-x-0"}`
             : `${isLeftType ? "-translate-x-full" : "translate-x-full"}`)
         }
       >
-        <div className="relative bg-tertiary h-screen w-[75vw] overflow-y-auto  flex  ">
+        <div className="relative bg-tertiary h-screen min-w-[250px] w-[75vw] md:w-[40vw] overflow-y-auto  flex  ">
 			
           {children}
         </div>

@@ -18,7 +18,7 @@ interface TCard {
 const Card: React.FC<{ data: TCard }> = ({ data }) => {
   return (
     <motion.div
-      className="relative group  rounded-lg h-[20vmax] w-[20vmax] overflow-hidden shadow-lg"
+      className="relative group  rounded-lg h-[23vmax] w-[23vmax] overflow-hidden shadow-lg"
       // variants={cardVariants}
       {...cardsAnimation}
     >
