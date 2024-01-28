@@ -8,12 +8,11 @@ import Projects from "@/components/home/ContentSection/Projects/Projects";
 import Skills from "@/components/home/ContentSection/Skills/Skills";
 import About from "@/components/home/ContentSection/About/About";
 import HomeSection from "@/components/home/ContentSection/Home/HomeSection";
-import useIsVisible from "@/helper/customHooks/useIsVisible";
 import { MdOutlineArrowUpward } from "react-icons/md";
 import LeftBarWrapper from "./SideBar/LeftBarWrapper";
 import { motion } from "framer-motion";
 import { dashboardVariants } from "../framer-motion/variants";
-import StarsCanvas from "../canvas/Stars";
+import isRefVisible from "@/helper/Functions/isRefVisible";
 
 interface ComponentProps {
   innerRef: React.MutableRefObject<null>;
@@ -72,7 +71,7 @@ export default function Home() {
   const visibilityData = refElement.map((item) => {
     return {
       id: item.id,
-      isVisible: useIsVisible(item.innerRef),
+      isVisible: isRefVisible(item.innerRef),
     };
   });
 

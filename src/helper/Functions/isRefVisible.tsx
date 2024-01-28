@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-
-export default function useIsVisible(ref: React.MutableRefObject<null>) {
+function isRefVisible(ref: React.MutableRefObject<null>) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -32,3 +31,5 @@ export default function useIsVisible(ref: React.MutableRefObject<null>) {
 
   return isVisible;
 }
+
+export default isRefVisible;
