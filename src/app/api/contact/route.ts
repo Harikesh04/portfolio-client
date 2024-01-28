@@ -12,12 +12,12 @@ export async function POST(req: Request) {
   try {
     // Assuming you have your email server credentials
     const transporter = nodemailer.createTransport({
-      host: process.env.HOST_SERVER, // Change this to your email provider's SMTP server
+      host: process.env.NEXT_PUBLIC_HOST_SERVER, // Change this to your email provider's SMTP server
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.USER_EMAIL,
-        pass: process.env.PASSWORD,
+        user: process.env.NEXT_PUBLIC_USER_EMAIL,
+        pass: process.env.NEXT_PUBLIC_PASSWORD,
       },
     });
 
@@ -27,8 +27,8 @@ export async function POST(req: Request) {
 
     // Configuring the email options
     const mailOptions = {
-      from: process.env.USER_EMAIL,
-      to: process.env.RECIEVER_EMAIL, 
+      from: process.env.NEXT_PUBLIC_USER_EMAIL,
+      to: process.env.NEXT_PUBLIC_RECIEVER_EMAIL, 
       subject: `New Contact Form Submission - ${subject}`,
       text: `
       Full Name: ${name}
