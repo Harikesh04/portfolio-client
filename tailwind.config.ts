@@ -16,8 +16,16 @@ const config: Config = {
       colors: {
         tertiary: "#151030",
         primary: "#050816",
-        secondary:'#0065ff'
+        secondary: "#0065ff",
       },
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      xmd: "890px",
     },
   },
   plugins: [],

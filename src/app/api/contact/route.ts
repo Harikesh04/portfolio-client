@@ -54,7 +54,7 @@ export async function POST(req: Request) {
     return NextResponse.json({
       success: false,
       message: "Failed to send email",
-      data: null,
+      data: error,
     });
   }
 }

@@ -12,32 +12,14 @@ interface LeftBarT {
 
 const LeftBarWrapper = ({ children }: LeftBarT) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isMobileView, setIsMobileView] = useState<boolean>(false);
-
-  useEffect(() => {
-    const checkMobileView = () => {
-      setIsMobileView(window.innerWidth <= 900);
-    };
-
-    checkMobileView(); // Initial check
-
-    const handleResize = () => {
-      checkMobileView();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   function handleClose() {
     setIsOpen(false);
   }
 
-  return isMobileView ? (
-    <div>
+  return (
+    <>
+     <div className="xmd:hidden">
       <span
         className="text-secondary absolute right-4 top-3 text-3xl p-1 z-30"
         onClick={() => setIsOpen((prev) => !prev)}
@@ -49,9 +31,12 @@ const LeftBarWrapper = ({ children }: LeftBarT) => {
         {children}
       </Drawer>
     </div>
-  ) : (
-    <>{children}</>
+    <div className="hidden xmd:block ">{children}</div>
+    </>
+   
   );
+
+
 };
 
 export default LeftBarWrapper;
