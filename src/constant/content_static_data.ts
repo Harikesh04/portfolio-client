@@ -22,7 +22,6 @@ import aws from "../assets/tech/aws.png";
 import next from "../assets/tech/next.png";
 import sql from "../assets/tech/sql.png";
 
-
 export const home_data = {
   title: "I’m Harikesh Singh",
   discription:
@@ -35,60 +34,52 @@ export const about_data = {
   description: `🚀 Full Stack Engineer with 2 years of experience . Passionate about creating seamless user experiences for challenging projects. Let's collaborate and craft something extraordinary together! 🌟`,
 };
 
-
-export const contact_data={
-  title:"Get in touch 🤝",
-  description:"Let's create something together 🚀",
-  contact_info:[
-    {title:'Email me at',
-     icon:MdEmail,
-     value:'singhharikesh294@gmail.com'
-  
-
-    },{
-      title:'Location',
-      icon:FaLocationDot,
-      value:'India',
-    }
+export const contact_data = {
+  title: "Get in touch 🤝",
+  description: "Let's create something together 🚀",
+  contact_info: [
+    {
+      title: "Email me at",
+      icon: MdEmail,
+      value: "singhharikesh294@gmail.com",
+    },
+    {
+      title: "Location",
+      icon: FaLocationDot,
+      value: "India",
+    },
   ],
-  contact_form:[
+  contact_form: [
     {
       label: "Full Name",
-      name:'name',
+      name: "name",
       type: "text",
       required: true,
-      
     },
     {
-      label:'Email Address',
-      name:'email',
+      label: "Email Address",
+      name: "email",
       type: "email",
       required: true,
-
     },
     {
-      label:'Subject',
-      name:'subject',
+      label: "Subject",
+      name: "subject",
       type: "text",
       required: true,
-
     },
     {
-      label:'Message',
-      name:'message',
+      label: "Message",
+      name: "message",
       type: "textArea",
       required: true,
-
-    }
-  ]
-
-
-}
-
+    },
+  ],
+};
 
 export const experience_data = {
-  title: 'Work Experience.',
-  description:'what i have done so far',
+  title: "Work Experience.",
+  description: "what i have done so far",
   experiences: [
     {
       title: "Software Engineer Intern",
@@ -104,12 +95,13 @@ export const experience_data = {
       title: "Software Engineer Intern",
       companyName: "Kylo Apps",
       date: "May 2023 - Aug 2023",
-      icon:Kylo,
+      icon: Kylo,
       points: [
-        "Led end-to-end development of Glocal and Vyap admin panels, collaborating with cross-functional teams.",
-        "Enhanced Glocal's offerings with features like chat, community, and seamless payment integration.",
+        "Contributed to the GlobalDBi SAAS Product, which consists of a B2B database. Developed a module that generates wallet credits using Stripe Payment Gateway, enabling users to download the B2B data.",
+        "Contributed to Viosa, an educational marketplace for courses. Specialized in the product 'Interview Pro' for interview practice and assignments. Implemented Razorpay Payment Gateway for seamless and secure course purchases. Utilized AI Credits as a unique payment option for the resume creation service.",
       ],
     },
+
     {
       title: "Software Engineer Intern",
       companyName: "My Analytics School",
@@ -133,7 +125,6 @@ export const experience_data = {
     },
   ],
 };
-
 
 export const technologies: TTechnology[] = [
   {
